@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to the Internverse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Product+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Product Sans', sans-serif;
+      background: radial-gradient(ellipse at center, #2d0038 0%, #000000 100%);
+      background-attachment: fixed;
+      background-size: cover;
+      color: #f1f1f1;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      background: linear-gradient(to right, #4285f4, #34a853, #fbbc05, #ea4335);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #d0d0f0;
+    }
+    section {
+      padding: 2rem;
+      max-width: 960px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+    .galaxy {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .planet {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: 0.3s ease;
+    }
+    .planet:hover {
+      transform: scale(1.03);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    .planet h2 {
+      color: #8ab4f8;
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #ccc;
+      position: relative;
+      z-index: 2;
+    }
+    .cta {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .cta button {
+      background-color: #8ab4f8;
+      color: #000;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .cta button:hover {
+      background-color: #5a94e6;
+    }
+    @keyframes comet {
+      0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(100vw) translateY(100vh);
+        opacity: 0;
+      }
+    }
+    .comet {
+      position: absolute;
+      width: 2px;
+      height: 100px;
+      background: linear-gradient(to bottom, #fff, transparent);
+      opacity: 0.6;
+      animation: comet 5s linear infinite;
+      z-index: 1;
+    }
+    .sparkle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.1; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <div class="comet" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+  <div class="comet" style="top: 30%; left: 50%; animation-delay: 2s;"></div>
+  <div class="comet" style="top: 10%; left: 80%; animation-delay: 4s;"></div>
+
+  <!-- Generate Sparkles -->
+  <script>
+    for (let i = 0; i < 100; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      sparkle.style.top = Math.random() * 100 + '%';
+      sparkle.style.left = Math.random() * 100 + '%';
+      sparkle.style.animationDelay = (Math.random() * 5) + 's';
+      document.body.appendChild(sparkle);
+    }
+  </script>
+
+  <header>
+    <h1>
+  <span style="color: #4285f4">🚀</span>
+  <span style="color: #4285f4">W</span><span style="color: #34a853">e</span><span style="color: #fbbc05">l</span><span style="color: #ea4335">c</span><span style="color: #4285f4">o</span><span style="color: #34a853">m</span><span style="color: #fbbc05">e</span> <span style="color: #ea4335">t</span><span style="color: #4285f4">o</span> <span style="color: #34a853">t</span><span style="color: #fbbc05">h</span><span style="color: #ea4335">e</span> <span style="color: #4285f4">I</span><span style="color: #34a853">n</span><span style="color: #fbbc05">t</span><span style="color: #ea4335">e</span><span style="color: #4285f4">r</span><span style="color: #34a853">n</span><span style="color: #fbbc05">v</span><span style="color: #ea4335">e</span><span style="color: #4285f4">r</span><span style="color: #34a853">s</span><span style="color: #fbbc05">e</span>
+</h1>
+    <p>Your cosmic journey to grow, learn, and lead — the Google way.</p>
+  </header>
+
+  <section>
+    <h2 style="text-align:center; color:#d3d3ff;">🌌 Explore Your Galaxy</h2>
+    <div class="galaxy">
+      <div class="planet">
+        <h2 style="font-family: 'Comic Sans MS', cursive; color: #34a853; font-weight: bold; text-shadow: 1px 1px #000;">🛠 Product Planet</h2>
+        <p>Design your first MVP, build a feature, and collaborate on real projects that solve global-scale problems.</p>
+      </div>
+      <div class="planet">
+        <h2 style="font-family: 'Comic Sans MS', cursive; color: #fbbc05; font-weight: bold; text-shadow: 1px 1px #000;">🧠 Strategy Station</h2>
+        <p>Make real-time roadmap decisions and balance trade-offs in dynamic sprint environments.</p>
+      </div>
+      <div class="planet">
+        <h2 style="font-family: 'Comic Sans MS', cursive; color: #4285f4; font-weight: bold; text-shadow: 1px 1px #000;">📊 Dataverse</h2>
+        <p>Use A/B testing, feedback loops, and KPIs to iterate and optimize your intern experience.</p>
+      </div>
+      <div class="planet">
+        <h2 style="font-family: 'Comic Sans MS', cursive; color: #ea4335; font-weight: bold; text-shadow: 1px 1px #000;">🌈 DEI Dimension</h2>
+        <p>Lead inclusion challenges, design for equity, and create safe spaces for global intern voices.</p>
+      </div>
+      <div class="planet">
+        <h2 style="font-family: 'Comic Sans MS', cursive; color: #8e24aa; font-weight: bold; text-shadow: 1px 1px #000;">🎙 Boss Battles</h2>
+        <p>Pitch ideas to Google leaders and gain real-time feedback on innovation, scale, and impact.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <button onclick="alert('Launching your Internverse... 🚀')">Start Your Journey</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 | Designed by Krishnaja Varma for the Google PM Role | #Internverse
+  </footer>
+</body>
+</html>
